@@ -1,9 +1,7 @@
 # EupsPkg config file. Sourced by 'eupspkg'
 
-# Breaks on Darwin w/o this
-export LANG=C
-
 config()
 {
-    cmake .
+    # TokuDB requires third-party software jemalloci (see http://www.canonware.com/jemalloc/)
+    cmake . -DCMAKE_INSTALL_PREFIX=${PREFIX} -DPLUGIN_TOKUDB=NO
 }
