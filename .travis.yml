@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+      - docker
+
+before_install:
+      - docker pull qserv/stack:latest
+
+script:
+      - docker build -t qserv/mariadb:debian debian
