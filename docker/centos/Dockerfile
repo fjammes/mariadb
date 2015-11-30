@@ -28,7 +28,7 @@ USER qserv
 RUN bash -c ". /qserv/stack/loadLSST.bash && setup git 1.8.5.2 && setup -r . && eupspkg -er config"
 
 USER root
-RUN yum install -y liblzma-devel
+RUN yum install -y xz-devel
 USER qserv
 RUN bash -c ". /qserv/stack/loadLSST.bash && setup git 1.8.5.2 && setup -r . && eupspkg -er build"
 
