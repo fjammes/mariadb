@@ -19,21 +19,21 @@ RUN yum install -y zlib-devel
 RUN yum install -y gettext perl-devel
 USER qserv
 RUN bash -c ". /qserv/stack/loadLSST.bash && eups distrib install git 1.8.5.2"
-RUN bash -c ". /qserv/stack/loadLSST.bash && setup -r . && eupspkg -er prep"
+RUN bash -c ". /qserv/stack/loadLSST.bash && setup git 1.8.5.2 && setup -r . && eupspkg -er prep"
 
 USER root
-RUN yum install -y libncurses5-devel
+RUN yum install -y ncurses-devel
 # TODO faut il libxml2?
 USER qserv
-RUN bash -c ". /qserv/stack/loadLSST.bash && setup -r . && eupspkg -er config"
+RUN bash -c ". /qserv/stack/loadLSST.bash && setup git 1.8.5.2 && setup -r . && eupspkg -er config"
 
 USER root
 RUN yum install -y liblzma-devel
 USER qserv
-RUN bash -c ". /qserv/stack/loadLSST.bash && setup -r . && eupspkg -er build"
+RUN bash -c ". /qserv/stack/loadLSST.bash && setup git 1.8.5.2 && setup -r . && eupspkg -er build"
 
 USER root
 RUN yum install -y vim
 USER qserv
-RUN bash -c ". /qserv/stack/loadLSST.bash && setup -r . && eupspkg -er install"
-RUN bash -c ". /qserv/stack/loadLSST.bash && setup -r . && eupspkg -er decl -t current"
+RUN bash -c ". /qserv/stack/loadLSST.bash && setup git 1.8.5.2 && setup -r . && eupspkg -er install"
+RUN bash -c ". /qserv/stack/loadLSST.bash && setup git 1.8.5.2 && setup -r . && eupspkg -er decl -t current"
