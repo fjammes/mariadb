@@ -16,7 +16,7 @@ RUN yum install -y cmake
 # Needed by git and MariaDB build step
 RUN yum install -y zlib-devel
 # Needed by git
-RUN yum install -y gettext
+RUN yum install -y gettext perl-devel
 USER qserv
 RUN bash -c ". /qserv/stack/loadLSST.bash && eups distrib install git 1.8.5.2"
 RUN bash -c ". /qserv/stack/loadLSST.bash && setup -r . && eupspkg -er prep"
