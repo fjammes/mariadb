@@ -20,7 +20,7 @@
 # the GNU General Public License along with this program.  If not,
 # see <http://www.lsstcorp.org/LegalNotices/>.
 
-# Build MariaDB using eups in a Docker container 
+# Build MariaDB using eups in a Docker container
 # Useful to find minimal dependencies list
 # indeed Linux distribution images for Docker are very minimalist
 
@@ -37,7 +37,7 @@ Usage: `basename $0` [options]
     -h          this message
     -C          Rebuild the image from scratch
 
-  Build MariaDB using eups in a Docker container 
+  Build MariaDB using eups in a Docker container
 
 EOD
 }
