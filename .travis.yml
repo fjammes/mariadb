@@ -7,4 +7,4 @@ before_install:
       - docker pull qserv/stack:latest
 
 script:
-      - docker build -t qserv/mariadb:debian debian
+      - docker build -t qserv/mariadb:debian docker/debian
